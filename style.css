@@ -1,0 +1,67 @@
+
+:root{
+  --bg:#334155;           /* slate blue-grey */
+  --panel:#1f2937;        /* darker panel */
+  --ink:#f8fafc;          /* near-white text */
+  --muted:#cbd5e1;        /* muted text */
+  --accent:#e2e8f0;       /* light grey-blue */
+  --max:980px;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font:16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-underline-offset:2px}
+a:hover{opacity:.9}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background:rgba(31,41,55,0.7);
+  backdrop-filter:saturate(120%) blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.site-header .wrap{display:flex; align-items:center; justify-content:space-between; height:68px}
+.brand img{height:28px; width:auto; display:block}
+.site-nav a{color:var(--muted); text-decoration:none; margin-left:18px; font-weight:600}
+.site-nav a:hover{color:var(--ink)}
+
+.hero{
+  padding:96px 0 72px;
+  background:
+    radial-gradient(800px 400px at 70% -10%, rgba(226,232,240,.25), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.hero-inner{max-width:840px}
+h1{font:700 44px/1.1 Georgia, "Times New Roman", serif; margin:0 0 10px}
+h2{font:700 28px/1.2 Georgia, "Times New Roman", serif; margin:0 0 10px}
+p{margin:0 0 12px}
+.tag{font-size:20px; color:var(--muted)}
+.sub{color:#e5e7eb}
+.cta{display:inline-block; margin-top:16px; background:var(--ink); color:#0b0c10; padding:12px 16px; border-radius:10px; text-decoration:none; font-weight:700}
+
+.section{padding:56px 0; border-top:1px solid rgba(255,255,255,.08)}
+.section.alt{background:rgba(255,255,255,.02)}
+
+.cards{list-style:none; padding:0; margin:20px 0; display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))}
+.card{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:18px}
+
+.search{margin:14px 0 0}
+.search input{
+  width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.05); color:var(--ink);
+}
+
+.site-footer{padding:28px 0; border-top:1px solid rgba(255,255,255,.08); color:var(--muted); font-size:14px}
+.small{font-size:12px; color:#d1d5db}
+
+@media (max-width:720px){
+  h1{font-size:36px}
+  .hero{padding:72px 0 56px}
+}

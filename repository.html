@@ -1,0 +1,69 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Repository — Systems Observatory</title>
+  <meta name="description" content="Repository of process notes, reading lists, and schemas in systems psychodynamics and neuropsychoanalysis." />
+  <link rel="icon" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Systems Observatory home">
+      <img src="/assets/so-wordmark.svg" alt="Systems Observatory" />
+    </a>
+    <nav class="site-nav">
+      <a href="/about.html">About</a>
+      <a href="/repository.html">Repository</a>
+      <a href="/#npsa">NPSA India</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <h2>Repository</h2>
+      <p>A living, lightly‑curated index. Entries are short, versioned notes. Search to filter.</p>
+      <div class="search"><input id="q" type="search" placeholder="Search entries (e.g., containment, Bion, affect)"></div>
+
+      <ul class="cards" id="list">
+        <li class="card" data-tags="containment bion affect regulation scaling teams institutions model">
+          <h3>Schema — Containment across levels</h3>
+          <p>How Bion’s containment might scale from the clinic to teams and institutions; where affect‑regulation findings inform the model.</p>
+        </li>
+        <li class="card" data-tags="reading list bibliography starter neuropsychoanalysis systems psychodynamics annotated">
+          <h3>Reading list — Starter</h3>
+          <p>Foundational texts in systems psychodynamics and neuropsychoanalysis; annotated for newcomers. Updated periodically.</p>
+        </li>
+        <li class="card" data-tags="method pathway vignette group dynamics organizational defenses policy structure">
+          <h3>Method — From individual to institution</h3>
+          <p>A working pathway for inquiry: clinical vignette → group dynamics → organizational defenses → policy/structure implications.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span id="year"></span> Systems Observatory</p>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const q = document.getElementById('q');
+  const list = document.getElementById('list');
+  q.addEventListener('input', () => {
+    const term = q.value.toLowerCase().trim();
+    [...list.children].forEach(li => {
+      const text = (li.textContent + ' ' + li.getAttribute('data-tags')).toLowerCase();
+      li.style.display = term && !text.includes(term) ? 'none' : '';
+    });
+  });
+</script>
+</body>
+</html>
