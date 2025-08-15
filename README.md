@@ -1,5 +1,5 @@
 
-Systems Observatory — Research Commons (Static Site)
+Systems Observatory — Research Commons 
 ===================================================
 
 How to use (GitHub → Netlify):
